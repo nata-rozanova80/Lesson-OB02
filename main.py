@@ -1,13 +1,18 @@
 class User:
-    def __init__(self, _user_id, name, access_user):
+    def __init__(self, _user_id, name, __access_user):
         self._user_id = _user_id
         self.name = name
-        self.access = access_user
+        self.access = __access_user
         self.names = []
 
     def get_user_id(self):
         print(self._user_id)
         return self._user_id
+
+    def get__access_user(self):
+        __access_user="доступ разрешен"
+        print(self.access)
+        return self.access
 
 
 class Admin(User):
@@ -45,15 +50,20 @@ class Admin(User):
 
 # Пример использования
 admin_status = Admin(_user_id=1, name="AdminName", access_user="full", access_admin="full")
+au = User(_user_id=2, name="g", _User__access_user=None)
 
 # Получение информации о пользователе
 print(admin_status.get_user_id())
 print(admin_status.name)
 print(admin_status.access)
 print(admin_status.set_private("private_access"))
+# print(au._User__access_user)
+print(au.get__access_user)
 
 # Добавление пользователей
 admin_status.add_user()
 
 # Удаление пользователя
 admin_status.remove_user()
+
+au.get__access_user()
