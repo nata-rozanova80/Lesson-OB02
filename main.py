@@ -3,7 +3,7 @@ class User:
         self._user_id = _user_id
         self.name = name
         self.access = access_user
-        self.names = []  # Переместил names в атрибут класса
+        self.names = []
 
     def get_user_id(self):
         print(self._user_id)
@@ -16,15 +16,14 @@ class Admin(User):
         self.__access_admin = access_admin  # Оставляем одно подчеркивание для защиты
 
     def add_user(self):
-        # Define the number of names you want to input
+        # Количество имен, которые вы хотите ввести.
         num_of_names = int(input("Enter the number of names you want to input: "))
 
-        # Use a for loop to take input for each name
+        # Используем цикл for для ввода имен
         for i in range(num_of_names):
             name = input(f"Enter name {i + 1}: ")
             self.names.append(name)
 
-        # Print the list of names
         print("The list of names you entered is:", self.names)
 
     def remove_user(self):
