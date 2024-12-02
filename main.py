@@ -57,7 +57,6 @@ print(admin_status.get_user_id())
 print(admin_status.name)
 print(admin_status.access)
 print(admin_status.set_private("private_access"))
-# print(au._User__access_user)
 print(au.get__access_user)
 
 # Добавление пользователей
